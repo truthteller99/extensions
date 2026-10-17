@@ -1,8 +1,28 @@
 {
-    "name": "Cloudstream providers repository",
-    "description": "Cloudstream extension Repository",
-    "manifestVersion": 1,
-    "pluginLists": [
-      "https://raw.githubusercontent.com/recloudstream/extensions/builds/plugins.json"
-    ]
+  "name": "Motchill Custom Repo",
+  "description": "Direct Ad-Block Bypassing Streams for Motchill",
+  "manifestVersion": 2,
+  "pluginVersion": 1,
+  "plugins": [
+    {
+      "name": "Motchill",
+      "id": "com.example.motchill",
+      "version": 1,
+      "authors": ["Custom"],
+      "lang": "vi",
+      "mainUrl": "https://motchillc.com",
+      "types": ["Movie", "TvSeries", "Anime"],
+      "searchUrl": "https://motchillc.com",
+      "selectors": {
+        "searchItems": "li.list-film-item",
+        "title": "h3",
+        "url": "a[href]",
+        "poster": "img[src]",
+        "quality": ".label",
+        "plot": ".film-content p",
+        "episodeLink": ".list-episode a",
+        "videoStreamRegex": "file:\\s*[\"'](https.*?\\.m3u8.*?)[\"']"
+      }
+    }
+  ]
 }
